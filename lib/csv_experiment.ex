@@ -48,12 +48,8 @@ defmodule CsvExperiment do
   def read_csv!(path), do: File.read!(path) |> Csv.parse_string()
 
   def creat_multiplication_list() do
-    multiplication_list = []
-
     for x <- @range do
-      step = []
-      step = for y <- @range, do: step ++ (x * y)
-      multiplication_list ++ step
+      for y <- @range, do: x * y
     end
   end
 end
