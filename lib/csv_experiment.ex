@@ -45,7 +45,7 @@ defmodule CsvExperiment do
     |> then(&File.write!(path, &1))
   end
 
-  def read_csv!(path), do: File.read!(path) |> Csv.parse_string()
+  def read_csv!(path), do: File.read!(path) |> Csv.parse_string(skip_headers: false)
 
   def creat_multiplication_list() do
     for x <- @range do
